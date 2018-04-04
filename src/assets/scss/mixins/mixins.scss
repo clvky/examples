@@ -1,0 +1,76 @@
+/**
+ * [像素转rem]
+ */
+@mixin px2rem($property,$px-value,$rem-baseline:75px){
+    #{$property}: $px-value / $rem-baseline * 1rem;
+}
+/**
+ * 处理字体，如果其他属性要求不同dpr下也要保持一致，则也可以使用
+ */
+@mixin px2px($property, $px-value){
+    #{$property}: round($px-value / 2);
+    [data-dpr="2"] & {
+        #{$property}: $px-value;
+    }
+
+    // for mx3
+    [data-dpr="2.5"] & {
+        #{$property}: round($px-value * 2.5 / 2 );
+    }
+
+    // for 小米note
+    [data-dpr="2.75"] & {
+        #{$property}: round($px-value * 2.75 / 2 );
+    }
+
+    [data-dpr="3"] & {
+        #{$property}: round($px-value * 3 / 2);
+    }
+
+    // for 三星note4
+    [data-dpr="4"] & {
+        #{$property}: $px-value * 2;
+    }
+}
+
+/**
+* [baseline 像素转vw]
+* @type {Number}
+*/
+@mixin px2vw($property,$px-value,$vw-baseline:7.5px){
+    #{$property}: $px-value / $vw-baseline * 1vw;
+}
+/* 滚动条Scrollbar
+ -------------------------- */
+@mixin scroll-bar {
+    $--scrollbar-thumb-background: #b4bccc;
+    $--scrollbar-track-background: #fff;
+
+    &::-webkit-scrollbar {
+        z-index: 11;
+        width: 6px;
+
+        &:horizontal {
+            height: 6px;
+        }
+
+        &-thumb {
+            border-radius: 5px;
+            width: 6px;
+            background: $--scrollbar-thumb-background;
+        }
+
+        &-corner {
+            background: $--scrollbar-track-background;
+        }
+
+        &-track {
+            background: $--scrollbar-track-background;
+
+            &-piece {
+                background: $--scrollbar-track-background;
+                width: 6px;
+            }
+        }
+    }
+}
