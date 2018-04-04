@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # vuetest
 
 > A Vue.js project
@@ -19,3 +20,8 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# 所有Examples 
+
+1. fis的example
+>>>>>>> 0ef9ea4e48f1195ffd932e9d60d9b4dc08e01ffa

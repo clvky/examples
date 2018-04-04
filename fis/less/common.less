@@ -1,0 +1,16 @@
+*{margin:0;padding:0;}
+ul,li{list-style:none;}
+body{padding:30px;}
+p{line-height:40px;}
+h2{padding:20px 0;}
+.icon-list{
+	li{position:relative;
+		&:before{display:block;content:'';width:16px;height:16px;position:absolute;left:-16px;top:3px;}
+	}
+	li.list-1:before {
+		background-image: url('../img/list-1.png?__sprite');
+	}
+	li.list-2:before {
+		background-image: url('../img/list-2.png?__sprite');
+	}
+}
